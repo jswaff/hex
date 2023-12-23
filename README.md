@@ -1,6 +1,6 @@
 # hex
 
-A simple hex playing program, done as part of a C++ refresher course.  As this is just a toy program, all the code is in a single file, alleviating the 
+A simple hex playing program.  As this is just a toy program, all the code is in a single file, alleviating the 
 need for a Makefile.  Just do something like 'g++ hex.cpp' and then execute a.out.
 
 The rules for Hex: https://www.maths.ed.ac.uk/~csangwin/hex/index.html
