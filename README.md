@@ -13,7 +13,7 @@ When it is the computer's turn to play, it does something like this:
 
 2) For each candidate move, fill the remaining unoccupied positions at random, alternating colors.  (As if two idiots with no clue were playing.)  It doesn't
 matter that the game may be over before the board is full - filling the remaining squares doesn't change the outcome of the game, and is faster/cheaper
-then evaluating for a win after each move.  Do this many times, something like 10,000.  Record the win percentage for each candidate move.
+than evaluating for a win after each move.  Do this many times, something like 10,000.  Record the win percentage for each candidate move.
 
 3) Finally, pick the candidate move that had the highest win percentage.  Essentially, we are using that as a measure of the move's quality.  Note, draws
 are impossible in Hex.
