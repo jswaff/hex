@@ -3,19 +3,28 @@
 A simple hex playing program, done as part of a C++ refresher course.  As this is just a toy program, all the code is in a single file, alleviating the 
 need for a Makefile.  Just do something like 'g++ hex.cpp' and then execute a.out.
 
+The rules for Hex: https://www.maths.ed.ac.uk/~csangwin/hex/index.html
 
-The interesting thing about this program is that it has zero knowledge of the game of hex, yes still manages a decent game by using a Monte Carlo approach.
+
+The interesting thing about this program is that it has zero knowledge of the game of hex, yet still manages a decent game by using a Monte Carlo approach.
 When it is the computer's turn to play, it does something like this:
 
 1) Get a list of all unoccupied squares.  These are the candidate moves.
-2) For each candidate move, fill the remaining unoccupied positions at random, alternating colors.  (As if two idiots with no clue were playing.)  Do
-this many times, something like 10,000.  Record the win percentage for each candidate move.
-3) Finally, pick the candidate move that had the highest win percentage.  Essentially, we are using that as a measure of the move's quality.
+
+2) For each candidate move, fill the remaining unoccupied positions at random, alternating colors.  (As if two idiots with no clue were playing.)  It doesn't
+matter that the game may be over before the board is full - filling the remaining squares doesn't change the outcome of the game, and is faster/cheaper
+then evaluating for a win after each move.
+
+Do this many times, something like 10,000.  Record the win percentage for each candidate move.
+
+3) Finally, pick the candidate move that had the highest win percentage.  Essentially, we are using that as a measure of the move's quality.  Note, draws
+are impossible in Hex.  
 
 That is not perfect by any means, but it does play surprisingly well for something with zero domain knowledge.
 
 Below is a sample game played on a 5x5 board for illustration.  Note how the computer player played blocking moves!
 
+```
 Let's play a game of Hex!
 Blue wins by connecting east to west.
 Red wins by connecting north to south.
@@ -243,6 +252,7 @@ win % after 10000 simulations: 100%
 BLUE to move
 
 Game over.  The winner is ... RED!
+```
 
 
 
